@@ -1,4 +1,4 @@
-id: io.electronjs.Electron2.BaseApp
+id: org.electronjs.Electron2.BaseApp
 branch: stable
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
