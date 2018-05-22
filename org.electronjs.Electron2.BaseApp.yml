@@ -69,10 +69,10 @@ modules:
     build-commands:
       - install -m755 gvfs-trash /app/bin/gvfs-trash
     sources:
-    - type: script
-      dest-filename: gvfs-trash
-      commands:
-        - exec rm -r "$@"
+      - type: script
+        dest-filename: gvfs-trash
+        commands:
+          - exec rm -r "$@"
 
   - name: libgnome-keyring
     config-opts:
