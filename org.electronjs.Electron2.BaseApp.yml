@@ -21,18 +21,7 @@ cleanup:
 modules:
   - shared-modules/udev/udev-175.json
 
-  - name: dbus-glib
-    cleanup:
-      - /bin
-      - /libexec
-      - /etc/bash_completion.d
-    config-opts:
-      - --disable-static
-      - --disable-gtk-doc
-    sources:
-      - type: archive
-        url: https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.106.tar.gz
-        sha256: b38952706dcf68bad9c302999ef0f420b8cf1a2428227123f0ac4764b689c046
+  - shared-modules/dbus-glib/dbus-glib-0.110.json
 
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
 
