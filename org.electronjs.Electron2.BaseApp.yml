@@ -19,8 +19,6 @@ cleanup:
   - '*.la'
   - '*.a'
 modules:
-  - shared-modules/udev/udev-175.json
-
   - shared-modules/dbus-glib/dbus-glib-0.110.json
 
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
