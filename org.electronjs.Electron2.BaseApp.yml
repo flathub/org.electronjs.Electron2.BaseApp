@@ -41,8 +41,6 @@ modules:
 
   - name: libnotify
     buildsystem: meson
-    cleanup:
-      - /bin
     config-opts:
       - -Dtests=false
       - -Dintrospection=disabled
