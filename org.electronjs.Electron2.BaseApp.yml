@@ -94,15 +94,16 @@ modules:
         dest-filename: setup-separate-locales
         commands:
           - |
-            APP_LOCALES_DIR=$1/locales
-            RUNTIME_LOCALES_DIR=${FLATPAK_DEST}/share/runtime/locale
-            if [ -d ${APP_LOCALES_DIR} ]
-            then
-                for lang in ${APP_LOCALES_DIR}/*.pak
-                do
-                locale="$(basename -s .pak $lang)"
-                install -Dm644 -t "${RUNTIME_LOCALES_DIR}/${locale%%-*}/" "$lang"
-                ln -sf "${RUNTIME_LOCALES_DIR}/${locale%%-*}/$(basename $lang)" "${APP_LOCALES_DIR}/$(basename $lang)"
-                done
-            fi
+            set -e
 
+            APP_LOCALES_ROOT="$1/locales"
+            RUNTIME_LOCALES_ROOT="${FLATPAK_DEST}/share/runtime/locale"
+
+            if [ -d "${APP_LOCALES_ROOT}" ]; then
+              for lang in "${APP_LOCALES_ROOT}"/*.pak; do
+                LOCALE="$(basename -s .pak "${lang}")"
+                runtime_locale_dir="${RUNTIME_LOCALES_ROOT}/${LOCALE%%-*}/"
+                install -Dm644 -t "${runtime_locale_dir}" "${lang}"
+                ln -sf "${runtime_locale_dir}/$(basename "${lang}")" "${APP_LOCALES_ROOT}/$(basename "${lang}")"
+              done
+            fi
