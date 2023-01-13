@@ -3,7 +3,6 @@ branch: '22.08'
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
 runtime-version: '22.08'
-separate-locales: false
 cleanup:
   - /include
   - /lib/pkgconfig
@@ -85,3 +84,26 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+
+  - name: setup-separate-locales
+    buildsystem: simple
+    build-commands:
+      - install -m755 setup-separate-locales /app/bin/setup-separate-locales
+    sources:
+      - type: script
+        dest-filename: setup-separate-locales
+        commands:
+          - |
+            set -e
+
+            APP_LOCALES_ROOT="$1/locales"
+            RUNTIME_LOCALES_ROOT="${FLATPAK_DEST}/share/runtime/locale"
+
+            if [ -d "${APP_LOCALES_ROOT}" ]; then
+              for lang in "${APP_LOCALES_ROOT}"/*.pak; do
+                LOCALE="$(basename -s .pak "${lang}")"
+                runtime_locale_dir="${RUNTIME_LOCALES_ROOT}/${LOCALE%%-*}/"
+                install -Dm644 -t "${runtime_locale_dir}" "${lang}"
+                ln -sf "${runtime_locale_dir}/$(basename "${lang}")" "${APP_LOCALES_ROOT}/$(basename "${lang}")"
+              done
+            fi
