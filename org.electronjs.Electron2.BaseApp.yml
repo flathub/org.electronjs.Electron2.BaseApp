@@ -44,12 +44,13 @@ modules:
     config-opts:
       - -Dtests=false
       - -Dintrospection=disabled
+      - -Dman=false
       - -Dgtk_doc=false
       - -Ddocbook_docs=disabled
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/libnotify/0.7/libnotify-0.7.8.tar.xz
-        sha256: 69209e0b663776a00c7b6c0e560302a8dbf66b2551d55616304f240bba66e18c
+        url: https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.2.tar.xz
+        sha256: c5f4ed3d1f86e5b118c76415aacb861873ed3e6f0c6b3181b828cf584fc5c616
 
   - name: gvfs-trash
     buildsystem: simple
