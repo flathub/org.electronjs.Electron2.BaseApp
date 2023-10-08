@@ -51,6 +51,10 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.2.tar.xz
         sha256: c5f4ed3d1f86e5b118c76415aacb861873ed3e6f0c6b3181b828cf584fc5c616
+      - type: patch
+        path: patches/0001-notification-Move-disconnect-to-dispose.patch
+      - type: patch
+        path: patches/0002-notification-Use-g_signal_connect_object.patch
 
   - name: gvfs-trash
     buildsystem: simple
