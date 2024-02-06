@@ -78,7 +78,7 @@ modules:
     config-opts:
       - --disable-static
       - --disable-gtk-doc
-      - --enable-introspection=no
+      - --enable-introspection=yes
       - --disable-vala
       - --disable-dumper
       - --disable-tests
