@@ -65,6 +65,26 @@ modules:
         commands: [autoreconf -vfi]
         dest-filename: autogen.sh
 
+  - name: python3-asarPy
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "asarPy" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/d7/ab/6c971fb30ffd7f892eada14f28b439f5621fb291bd333e3d67af1e208e49/asarPy-1.0.1.tar.gz
+        sha256: 1f1a9a230942da620bc134eccda7be352f731301ac1269e71e426419e433a0d6
+        x-checker-data:
+          name: asarPy
+
+  - name: patch-desktop-filename
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 patch-desktop-filename.py ${FLATPAK_DEST}/bin/patch-desktop-filename
+    sources:
+      - type: file
+        path: patch-desktop-filename.py
+
   - name: zypak
     sources:
       - type: git
