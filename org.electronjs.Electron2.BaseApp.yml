@@ -134,6 +134,4 @@ modules:
               - autoreconf -fiv
             dest-filename: autogen.sh
         cleanup:
-          - /include
-          - /lib/pkgconfig
-          - /share/doc
+          - "*"
