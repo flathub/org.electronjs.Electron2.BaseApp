@@ -109,7 +109,6 @@ modules:
       - --with-voxin=no
       - --without-flite
       - --disable-python
-      - --with-systemdsystemunitdir=/app/lib/systemd/system/speech-dispatcherd.service
     no-make-install: true
     post-install:
       - cd ./src/api/c && make install
