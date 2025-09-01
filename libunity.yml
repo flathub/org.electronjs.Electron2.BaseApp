@@ -65,6 +65,8 @@ modules:
 
       - type: patch
         path: patches/dee/dee-1.2.7-gcc6-fixes.patch
+      - type: patch
+        path: patches/dee/fdsdk2508.patch
     cleanup:
       - /bin
 

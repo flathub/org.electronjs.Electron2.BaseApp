@@ -62,6 +62,9 @@ modules:
       - --disable-coverage
       - --disable-introspection
     rm-configure: true
+    build-options:
+      env:
+        GTKDOCIZE: "true"
     sources:
       - type: archive
         url: https://download.gnome.org/sources/libgnome-keyring/3.12/libgnome-keyring-3.12.0.tar.xz
@@ -99,6 +102,8 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+      - type: patch
+        path: patches/zypak/fdsdk2508.patch
 
   # Chromium dynamically loads the Speech Dispatcher library libspeechd.so.2.
   # If present, and --enable-speech-dispatcher flag is passed, Web Speech API will be enabled.
@@ -123,8 +128,8 @@ modules:
       - /include
     sources:
       - type: archive
-        url: https://github.com/brailcom/speechd/releases/download/0.11.5/speech-dispatcher-0.11.5.tar.gz
-        sha512: d6d880bce0ae5bc2a5d519ef7740c689ae8b4b0bb658379762810e4beae3e465a429fbe19f7c490e89db0ea6a36aedd4b2287ac9251b90059b5c2cb3c0dd8a28
+        url: https://github.com/brailcom/speechd/releases/download/0.12.1/speech-dispatcher-0.12.1.tar.gz
+        sha256: b14a5238d287d2dcce4dd42bbd66ca65fa228e7e683708267f7b34036f7ba4b4
     modules:
       # dotconf provides utility functions to parse config files. It's only linked with the speech-dispatcher server,
       # which we aren't building, but it needs to exist to get past the ./configure step anyway

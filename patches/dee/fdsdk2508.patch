@@ -1,0 +1,18 @@
+diff --git a/tools/dee-tool.c b/tools/dee-tool.c
+index 51fc205..3a44131 100644
+--- a/tools/dee-tool.c
++++ b/tools/dee-tool.c
+@@ -204,10 +204,9 @@ _peer_lost_cb (DeePeer *p, const gchar *name)
+ 
+ static gboolean timed_out = FALSE;
+ static gboolean
+-_timeout_cb ()
+-{
+-  timed_out = TRUE;
+-  return FALSE;
++_timeout_cb (gpointer user_data) {
++    timed_out = TRUE;
++    return FALSE;
+ }
+ 
+ static void
