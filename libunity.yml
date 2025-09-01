@@ -1,7 +1,5 @@
 name: libunity
 buildsystem: autotools
-config-opts:
-- --with-pygi-overrides-dir="/app/lib/python3.12/site-packages/gi/overrides"
 build-options:
     prepend-path: /usr/lib/sdk/vala/bin
     prepend-ld-library-path: /usr/lib/sdk/vala/lib
@@ -17,8 +15,6 @@ sources:
 
   - type: patch
     path: patches/libunity/libunity-7.1.4-vala-053.patch
-  - type: patch
-    path: patches/libunity/libunity-pygi-overrides-dir.patch
 cleanup:
   - /bin
   - /share/unity
@@ -56,15 +52,10 @@ modules:
 
   - name: dee
     buildsystem: autotools
-    config-opts:
-    - --with-pygi-overrides-dir="/app/lib/python3.12/site-packages/gi/overrides"
     sources:
       - type: archive
         url: https://launchpad.net/dee/1.0/1.2.7/+download/dee-1.2.7.tar.gz
         sha256: 1bf0336ce684aa0f48d6eae2469628c1a9b43695a77443bc31a5790aa673bf8a
-
-      - type: patch
-        path: patches/dee/dee-pygi-overrides-dir.patch
 
       - type: patch
         path: patches/dee/dee-1.2.7-deprecated-g_type_class_add_private.patch
