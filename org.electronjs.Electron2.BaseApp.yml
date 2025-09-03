@@ -102,8 +102,6 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-      - type: patch
-        path: patches/zypak/fdsdk2508.patch
 
   # Chromium dynamically loads the Speech Dispatcher library libspeechd.so.2.
   # If present, and --enable-speech-dispatcher flag is passed, Web Speech API will be enabled.
