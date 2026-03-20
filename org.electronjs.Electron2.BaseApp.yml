@@ -5,6 +5,7 @@ sdk: org.freedesktop.Sdk
 runtime-version: '25.08'
 separate-locales: false
 sdk-extensions:
+  - org.freedesktop.Sdk.Extension.golang
   - org.freedesktop.Sdk.Extension.vala
 cleanup:
   - /include
@@ -89,13 +90,7 @@ modules:
           type: pypi
           name: asarPy
 
-  - name: patch-desktop-filename
-    buildsystem: simple
-    build-commands:
-      - install -Dm755 patch-desktop-filename.py ${FLATPAK_DEST}/bin/patch-desktop-filename
-    sources:
-      - type: file
-        path: patch-desktop-filename.py
+  - patch-desktop-filename/patch-desktop-filename.yml
 
   - name: zypak
     sources:
