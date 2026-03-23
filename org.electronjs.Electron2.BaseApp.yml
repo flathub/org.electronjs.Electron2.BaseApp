@@ -5,6 +5,7 @@ sdk: org.freedesktop.Sdk
 runtime-version: '25.08'
 separate-locales: false
 sdk-extensions:
+  - org.freedesktop.Sdk.Extension.golang
   - org.freedesktop.Sdk.Extension.vala
 cleanup:
   - /include
