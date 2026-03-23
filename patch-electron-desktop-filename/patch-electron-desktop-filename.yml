@@ -1,0 +1,19 @@
+name: patch-electron-desktop-filename
+buildsystem: simple
+build-options:
+  append-path: /usr/lib/sdk/golang/bin
+build-commands:
+  - go build -mod=vendor .
+  - install -Dm755 patch-electron-desktop-filename -t ${FLATPAK_DEST}/bin
+sources:
+  - type: archive
+    url: https://codeberg.org/JakobDev/patch-electron-desktop-filename/archive/1.0.tar.gz
+    sha256: 368afae6b31168def79d1716fbcb3d885125755e05171ebb29224668229046e8
+    x-checker-data:
+      type: json
+      url: https://codeberg.org/api/v1/repos/JakobDev/patch-electron-desktop-filename/releases/latest
+      timestamp-query: .published_at
+      version-query: .tag_name
+      url-query: .tarball_url
+
+  - go.mod.yml

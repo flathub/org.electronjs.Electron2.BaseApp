@@ -5,7 +5,6 @@ sdk: org.freedesktop.Sdk
 runtime-version: '25.08'
 separate-locales: false
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.golang
   - org.freedesktop.Sdk.Extension.vala
 cleanup:
   - /include
@@ -77,6 +76,8 @@ modules:
         commands: [autoreconf -vfi]
         dest-filename: autogen.sh
 
+  - patch-electron-desktop-filename/patch-electron-desktop-filename.yml
+
   - name: python3-asarPy
     buildsystem: simple
     build-commands:
@@ -90,7 +91,13 @@ modules:
           type: pypi
           name: asarPy
 
-  - patch-desktop-filename/patch-desktop-filename.yml
+  - name: patch-desktop-filename
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 patch-desktop-filename.py ${FLATPAK_DEST}/bin/patch-desktop-filename
+    sources:
+      - type: file
+        path: patch-desktop-filename.py
 
   - name: zypak
     sources:
