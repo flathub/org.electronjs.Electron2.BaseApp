@@ -1,0 +1,9 @@
+# codeberg.org/jakobdev/asar-go v1.1.0
+## explicit; go 1.26
+codeberg.org/jakobdev/asar-go
+# github.com/alecthomas/kong v1.14.0
+## explicit; go 1.20
+github.com/alecthomas/kong
+# golang.org/x/sync v0.20.0
+## explicit; go 1.25.0
+golang.org/x/sync/errgroup

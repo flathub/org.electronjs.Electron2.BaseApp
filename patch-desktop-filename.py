@@ -34,6 +34,8 @@ import os
 
 
 def main() -> None:
+    print("patch-desktop-filename is deprecated and will be removed in 26.08. Use patch-electron-desktop-filename instead.", file=sys.stderr)
+
     asar_path = sys.argv[1]
     extract_dir = tempfile.mktemp()
 
