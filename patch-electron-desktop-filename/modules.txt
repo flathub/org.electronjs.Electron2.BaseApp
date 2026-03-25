@@ -1,4 +1,4 @@
-# codeberg.org/jakobdev/asar-go v1.1.0
+# codeberg.org/jakobdev/asar-go v1.1.1
 ## explicit; go 1.26
 codeberg.org/jakobdev/asar-go
 # github.com/alecthomas/kong v1.14.0
