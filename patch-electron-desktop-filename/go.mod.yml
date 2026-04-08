@@ -3,15 +3,15 @@
   path: modules.txt
   type: file
 - dest: vendor/codeberg.org/jakobdev/asar-go
-  sha256: 5acbe7e0dfada64a01e1668cdfa3437fbeae5291d5fd4ae0626fe7e0595dd440
+  sha256: 1eee86b5548679833ec5407ee1d27cffffe4594d6be21aec54fe562018ef3e2a
   strip-components: 3
   type: archive
-  url: https://proxy.golang.org/codeberg.org/jakobdev/asar-go/@v/v1.1.1.zip
+  url: https://proxy.golang.org/codeberg.org/jakobdev/asar-go/@v/v1.2.0.zip
 - dest: vendor/github.com/alecthomas/kong
-  sha256: f7f01c58ed360875af0ae0c0f366ee68d20143ae2d7d82d96fbe091f1d9316da
+  sha256: 40af0f7342da8b195cfa4b95abec2120201fca16c1563e08dbf60efb8583f9e0
   strip-components: 3
   type: archive
-  url: https://proxy.golang.org/github.com/alecthomas/kong/@v/v1.14.0.zip
+  url: https://proxy.golang.org/github.com/alecthomas/kong/@v/v1.15.0.zip
 - dest: vendor/golang.org/x/sync
   sha256: 7179d4d68800f6fdcadb9d4bbf11cbb5df9b40360c89305c203fe20723cbd375
   strip-components: 3
