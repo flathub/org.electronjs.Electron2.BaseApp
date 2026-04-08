@@ -7,8 +7,8 @@ build-commands:
   - install -Dm755 patch-electron-desktop-filename -t ${FLATPAK_DEST}/bin
 sources:
   - type: archive
-    url: https://codeberg.org/JakobDev/patch-electron-desktop-filename/archive/1.2.tar.gz
-    sha256: a9932f360343272413a73d70c0571167a71192f0b1be15d8b52f65d278c66051
+    url: https://codeberg.org/JakobDev/patch-electron-desktop-filename/archive/1.3.tar.gz
+    sha256: 9428cd446071139ebe1b1132ae8803f28dd46efdc50ea2dd5621e8f6f4962052
     x-checker-data:
       type: json
       url: https://codeberg.org/api/v1/repos/JakobDev/patch-electron-desktop-filename/releases/latest
