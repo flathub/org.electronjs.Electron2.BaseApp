@@ -3,17 +3,17 @@
   path: modules.txt
   type: file
 - dest: vendor/codeberg.org/jakobdev/asar-go
-  sha256: 1eee86b5548679833ec5407ee1d27cffffe4594d6be21aec54fe562018ef3e2a
+  sha256: 6daf895f1cb2225c3d8b381353e9f86c864d56c44a971d9fc02d0252710bbbe4
   strip-components: 3
   type: archive
-  url: https://proxy.golang.org/codeberg.org/jakobdev/asar-go/@v/v1.2.0.zip
+  url: https://proxy.golang.org/codeberg.org/jakobdev/asar-go/@v/v1.3.0.zip
 - dest: vendor/github.com/alecthomas/kong
-  sha256: 40af0f7342da8b195cfa4b95abec2120201fca16c1563e08dbf60efb8583f9e0
+  sha256: 59dca5d8e955871a0d7ca0250ecf4f6df45893af5d8f5ceab27bab653e814851
   strip-components: 3
   type: archive
-  url: https://proxy.golang.org/github.com/alecthomas/kong/@v/v1.15.0.zip
+  url: https://proxy.golang.org/github.com/alecthomas/kong/@v/v1.16.1.zip
 - dest: vendor/golang.org/x/sync
-  sha256: 7179d4d68800f6fdcadb9d4bbf11cbb5df9b40360c89305c203fe20723cbd375
+  sha256: 4bc67d258ce7867cfc1a43765c43d98b4c49b90c46dd0b86f896a5a4909fade0
   strip-components: 3
   type: archive
-  url: https://proxy.golang.org/golang.org/x/sync/@v/v0.20.0.zip
+  url: https://proxy.golang.org/golang.org/x/sync/@v/v0.22.0.zip
