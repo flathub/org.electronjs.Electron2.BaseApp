@@ -21,7 +21,6 @@ cleanup:
   - '*.la'
   - '*.a'
 modules:
-  - shared-modules/dbus-glib/dbus-glib.json
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
 
   - name: gvfs-trash
